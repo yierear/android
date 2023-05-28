@@ -3,7 +3,7 @@ package com.example.fruitandvegetableappointmentsapplication;
 //推荐文本库--->改成数据库
 public class Tuijian {
 
-    private static String[] names={"苹果","生菜","香蕉","草莓","橘子"};
+    private static String[] names={"你好苹果","生菜","香蕉","草莓","橘子"};
     private static String[] news={"苹果口味酸甜，进食后可以刺激唾液、胃酸分泌，有助于缓解口渴症状，还可以增进食欲、促进消化。苹果中含有丰富的果胶，能够促进胃肠道蠕动，还能吸附肠道内的有害物质，调节胃肠道菌群",
             "生菜中含有丰富的膳食纤维，该物质不能被人体吸收，但能够促进肠道蠕动，在肠道内吸收水分，缓解便秘的症状。生菜性凉，具有清热利尿的作用，能够促进体内多余水分排出。",
             "香蕉为芭蕉科植物甘蕉的果实，果肉香甜，除可生食外，还可制成多种加工品。香蕉营养高、热量低，具有降低血压、缓解抽筋、改善便秘等功效。",
