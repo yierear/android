@@ -61,11 +61,11 @@ public class shucai_activity extends Activity {
         @Override
         public View getView(int i, View cview, ViewGroup viewGroup) {
             if(cview==null){
-                cview=View.inflate(shucai_activity.this,R.layout.tuijian_item_layout,null);
+                cview=View.inflate(shucai_activity.this,R.layout.recom_item_layout,null);
                 holder =new ViewHolder();
-                holder.title=cview.findViewById(R.id.tuijian_title);
-                holder.news=cview.findViewById(R.id.tuijian_text);
-                holder.img=cview.findViewById(R.id.tuijian_img);
+                holder.title=cview.findViewById(R.id.recommendation_title);
+                holder.news=cview.findViewById(R.id.recommendation_text);
+                holder.img=cview.findViewById(R.id.recommendation_img);
 
                 cview.setTag(holder);
             }else{

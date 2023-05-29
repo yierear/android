@@ -19,7 +19,6 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
         ListView mLvTuijian=findViewById(R.id.tuijian);
         initView();
@@ -36,7 +35,7 @@ public class MainActivity extends Activity {
         discussion= findViewById(R.id.discussion);
         me=findViewById(R.id.me);
 
-        discussion.setOnClickListener(new View.OnClickListener() {
+        reservation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent1=new Intent(MainActivity.this,shucai_activity.class);
@@ -84,11 +83,11 @@ public class MainActivity extends Activity {
         @Override
         public View getView(int i, View cview, ViewGroup viewGroup) {
             if(cview==null){
-                cview=View.inflate(MainActivity.this,R.layout.tuijian_item_layout,null);
+                cview=View.inflate(MainActivity.this,R.layout.recom_item_layout,null);
                 holder =new ViewHolder();
-                holder.title=cview.findViewById(R.id.tuijian_title);
-                holder.news=cview.findViewById(R.id.tuijian_text);
-                holder.img=cview.findViewById(R.id.tuijian_img);
+                holder.title=cview.findViewById(R.id.recommendation_title);
+                holder.news=cview.findViewById(R.id.recommendation_text);
+                holder.img=cview.findViewById(R.id.recommendation_img);
 
                 cview.setTag(holder);
             }else{

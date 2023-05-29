@@ -22,9 +22,10 @@
         <LinearLayout android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:orientation="vertical">
-
                 <ListView
                     android:id="@+id/tuijian"
+                    android:divider="#00000000"
+                    android:dividerHeight="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="600dp">
                 </ListView>
@@ -41,7 +42,7 @@
                 android:background="@color/white"
                 android:id="@+id/home"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/shouye"
+                android:drawableTop="@drawable/home"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:text="推荐">
@@ -77,8 +78,5 @@
         <!--底部固定-->
     </LinearLayout>
  <!--总体布局-->
-
-
-
 
     </LinearLayout>
