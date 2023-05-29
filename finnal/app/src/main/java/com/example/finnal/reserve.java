@@ -11,13 +11,11 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class yuyuexuanze extends Activity {
+public class reserve extends Activity {
     private Button button1,button2,button3,button4,backbutton;
     TextView text1,text2,text3,text4;
     private int year;
@@ -29,7 +27,7 @@ public class yuyuexuanze extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_yuyuexuanze);
+        setContentView(R.layout.activity_reserve);
 
         dbhelper = new DBHelper(this);
         mDbWriter = dbhelper.getWritableDatabase();
@@ -48,7 +46,7 @@ public class yuyuexuanze extends Activity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatePickerDialog dpd=new DatePickerDialog(yuyuexuanze.this, new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog dpd=new DatePickerDialog(reserve.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int myyear, int monthOfYear, int dayOfMonth) {
                         text1.setText(myyear+"-"+(monthOfYear+1)+"-"+dayOfMonth);
@@ -76,7 +74,7 @@ public class yuyuexuanze extends Activity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatePickerDialog dpd=new DatePickerDialog(yuyuexuanze.this, new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog dpd=new DatePickerDialog(reserve.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int myyear, int monthOfYear, int dayOfMonth) {
                         text2.setText(myyear+"-"+(monthOfYear+1)+"-"+dayOfMonth);
@@ -104,7 +102,7 @@ public class yuyuexuanze extends Activity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatePickerDialog dpd=new DatePickerDialog(yuyuexuanze.this, new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog dpd=new DatePickerDialog(reserve.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int myyear, int monthOfYear, int dayOfMonth) {
                         text3.setText(myyear+"-"+(monthOfYear+1)+"-"+dayOfMonth);
@@ -132,7 +130,7 @@ public class yuyuexuanze extends Activity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatePickerDialog dpd=new DatePickerDialog(yuyuexuanze.this, new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog dpd=new DatePickerDialog(reserve.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int myyear, int monthOfYear, int dayOfMonth) {
                         text4.setText(myyear+"-"+(monthOfYear+1)+"-"+dayOfMonth);
@@ -153,7 +151,7 @@ public class yuyuexuanze extends Activity {
     backbutton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent intent2=new Intent(yuyuexuanze.this,MainActivity.class);
+            Intent intent2=new Intent(reserve.this,MainActivity.class);
             intent2.putExtra("username",name);
             startActivity(intent2);
         }
