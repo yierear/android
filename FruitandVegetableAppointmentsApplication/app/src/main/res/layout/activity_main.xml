@@ -23,14 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TableRow>
-
-                <Button
-                    android:id="@+id/shouye"
-                    android:layout_width="102dp"
-                    android:background="#FFFFFF"
-                    android:drawableTop="@drawable/shouye"
-                    android:text="推荐"
-                    tools:ignore="TouchTargetSizeCheck" />
+                <Button android:id="@+id/shouye" android:layout_width="102dp" android:background="#FFFFFF" android:drawableTop="@drawable/shouye" android:text="推荐"/>
                 <Button android:id="@+id/yuyue" android:layout_width="102dp" android:drawableTop="@drawable/yuyue" android:background="#FFFFFF" android:text="预约"/>
                 <Button android:id="@+id/taolun" android:layout_width="102dp" android:drawableTop="@drawable/taolun" android:background="#FFFFFF" android:text="讨论"/>
                 <Button android:id="@+id/wode" android:layout_width="102dp" android:drawableTop="@drawable/wode" android:background="#FFFFFF" android:text="我的"/>
@@ -39,7 +32,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="推荐果蔬！！"
+            android:text="推荐果蔬！！！！！"
             android:textSize="25dp"
             android:paddingLeft="30dp"
             android:paddingTop="10dp"/>
