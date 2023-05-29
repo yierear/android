@@ -38,7 +38,7 @@
             android:name=".taolun"
             android:exported="false" />
         <activity
-            android:name=".yuyuexuanze"
+            android:name=".reserve"
             android:exported="false" />
         <activity
             android:name=".shucai_activity"

@@ -11,8 +11,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 //推荐页
 public class shucai_activity extends Activity {
     private ViewHolder holder;
@@ -35,7 +33,7 @@ public class shucai_activity extends Activity {
         mLvshucai.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent3=new Intent(shucai_activity.this,yuyuexuanze.class);
+                Intent intent3=new Intent(shucai_activity.this, reserve.class);
                 intent3.putExtra("username",name);
                 startActivity(intent3);
             }
