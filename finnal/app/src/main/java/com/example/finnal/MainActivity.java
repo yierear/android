@@ -11,8 +11,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 public class MainActivity extends Activity {
     private Button shouye,yuyue,taolun,wode;
     private ViewHolder holder;
@@ -60,7 +58,7 @@ public class MainActivity extends Activity {
         wode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent3=new Intent(MainActivity.this,wode.class);
+                Intent intent3=new Intent(MainActivity.this, my.class);
                 intent3.putExtra("username", name);
                 startActivity(intent3);
             }

@@ -32,7 +32,7 @@
             android:name=".login"
             android:exported="false" />
         <activity
-            android:name=".wode"
+            android:name=".my"
             android:exported="false" />
         <activity
             android:name=".taolun"
