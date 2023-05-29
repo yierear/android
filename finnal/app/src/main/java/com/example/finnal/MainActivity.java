@@ -105,6 +105,4 @@ public class MainActivity extends Activity {
         private TextView news;
         private ImageView img;
     }
-
-
 }
