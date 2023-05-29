@@ -35,7 +35,7 @@
         <ListView
             android:id="@+id/tuijian"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="500dp">
         </ListView>
         </LinearLayout>
     </LinearLayout>

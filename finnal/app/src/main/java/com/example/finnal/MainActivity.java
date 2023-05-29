@@ -11,12 +11,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 public class MainActivity extends Activity {
-    private Button shouye,yuyue,taolun,wode;
+    private Button home,reservation,discussion,me;//首页、预约、讨论、我的 按钮
     private ViewHolder holder;
-    private Tuijian tuijian;
+    private com.example.finnal.home home1;
     String name=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +23,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         ListView mLvTuijian=findViewById(R.id.tuijian);
         initView();
-        tuijian=new Tuijian();
+        home1 =new home();
         Newadptor newadptor =new Newadptor();
         mLvTuijian.setAdapter(newadptor);
         Intent intent=this.getIntent();
@@ -33,12 +31,12 @@ public class MainActivity extends Activity {
     }
 
     private void initView() {
-        shouye= findViewById(R.id.shouye);
-        yuyue= findViewById(R.id.yuyue);
-        taolun= findViewById(R.id.taolun);
-        wode=findViewById(R.id.wode);
+        home= findViewById(R.id.shouye);
+        reservation= findViewById(R.id.yuyue);
+        discussion= findViewById(R.id.taolun);
+        me=findViewById(R.id.wode);
 
-        yuyue.setOnClickListener(new View.OnClickListener() {
+        discussion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent1=new Intent(MainActivity.this,shucai_activity.class);
@@ -47,7 +45,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        taolun.setOnClickListener(new View.OnClickListener() {
+        discussion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -57,7 +55,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        wode.setOnClickListener(new View.OnClickListener() {
+        me.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent3=new Intent(MainActivity.this,wode.class);
@@ -70,12 +68,12 @@ public class MainActivity extends Activity {
     private class Newadptor extends BaseAdapter{
         @Override
         public int getCount() {
-            return Tuijian.getNames().length;
+            return com.example.finnal.home.getNames().length;
         }
 
         @Override
         public Object getItem(int i) {
-            return Tuijian.getNames()[i];
+            return com.example.finnal.home.getNames()[i];
         }
 
         @Override
@@ -97,9 +95,9 @@ public class MainActivity extends Activity {
                 holder=(ViewHolder) cview.getTag();
             }
 
-            holder.title.setText(Tuijian.getNames()[i]);
-            holder.news.setText(Tuijian.getNews()[i]);
-            holder.img.setBackgroundResource(Tuijian.getIcons()[i]);
+            holder.title.setText(com.example.finnal.home.getNames()[i]);
+            holder.news.setText(com.example.finnal.home.getNews()[i]);
+            holder.img.setBackgroundResource(com.example.finnal.home.getIcons()[i]);
             return cview;
         }
     }

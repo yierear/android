@@ -1,7 +1,7 @@
 package com.example.finnal;
 
 //推荐文本库--->改成数据库
-public class Tuijian {
+public class home {
 
     private static String[] names={"你好苹果","哈哈生菜","香蕉","草莓","橘子"};
     private static String[] news={"苹果口味酸甜，进食后可以刺激唾液、胃酸分泌，有助于缓解口渴症状，还可以增进食欲、促进消化。苹果中含有丰富的果胶，能够促进胃肠道蠕动，还能吸附肠道内的有害物质，调节胃肠道菌群",
