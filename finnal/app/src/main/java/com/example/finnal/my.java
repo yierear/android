@@ -1,6 +1,5 @@
 package com.example.finnal;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -9,9 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class wode extends Activity {
+public class my extends Activity {
     Button login;
     Button more;
     TextView username2;
@@ -19,7 +16,7 @@ public class wode extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wode);
+        setContentView(R.layout.activity_my);
 
         initView();
         Intent intent=this.getIntent();
@@ -29,14 +26,14 @@ public class wode extends Activity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent inten1=new Intent(wode.this,login.class);
+                Intent inten1=new Intent(my.this,login.class);
                 startActivity(inten1);
             }
         });
         more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new  AlertDialog.Builder(wode.this).setMessage("更多功能，尽情期待").show();
+                new  AlertDialog.Builder(my.this).setMessage("更多功能，尽情期待").show();
             }
         });
     }

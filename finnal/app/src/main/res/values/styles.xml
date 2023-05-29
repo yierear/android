@@ -17,4 +17,9 @@
         <item name="android:paddingLeft">5dp</item>
         <item name="android:paddingRight">8dp</item>
     </style>
+    <style name="MyEditText">
+        <item name="colorControlNormal">@color/SmallGreen</item>
+        <item name="colorControlActivated">@color/Title</item>
+    </style>
+
 </resources>
