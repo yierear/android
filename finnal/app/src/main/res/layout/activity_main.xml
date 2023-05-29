@@ -23,10 +23,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TableRow>
-                <Button android:id="@+id/shouye" android:layout_width="102dp" android:background="#FFFFFF" android:drawableTop="@drawable/shouye" android:text="推荐"/>
-                <Button android:id="@+id/yuyue" android:layout_width="102dp" android:drawableTop="@drawable/yuyue" android:background="#FFFFFF" android:text="预约"/>
-                <Button android:id="@+id/taolun" android:layout_width="102dp" android:drawableTop="@drawable/taolun" android:background="#FFFFFF" android:text="讨论"/>
-                <Button android:id="@+id/wode" android:layout_width="102dp" android:drawableTop="@drawable/wode" android:background="#FFFFFF" android:text="我的"/>
+                <Button android:id="@+id/home" android:layout_width="102dp" android:background="#FFFFFF" android:drawableTop="@drawable/home" android:text="推荐"/>
+                <Button android:id="@+id/reservation" android:layout_width="102dp" android:drawableTop="@drawable/yuyue" android:background="#FFFFFF" android:text="预约"/>
+                <Button android:id="@+id/discussion" android:layout_width="102dp" android:drawableTop="@drawable/taolun" android:background="#FFFFFF" android:text="讨论"/>
+                <Button android:id="@+id/my" android:layout_width="102dp" android:drawableTop="@drawable/wode" android:background="#FFFFFF" android:text="我的"/>
             </TableRow>
         </TableLayout>
         <TextView

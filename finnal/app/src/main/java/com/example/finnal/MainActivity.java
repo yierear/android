@@ -12,7 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-    private Button home,reservation,discussion,me;//首页、预约、讨论、我的 按钮
+    private Button home,reservation,discussion,my;//首页、预约、讨论、我的 按钮
     private ViewHolder holder;
     private com.example.finnal.home home1;
     String name=null;
@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
         home= findViewById(R.id.home);
         reservation= findViewById(R.id.reservation);
         discussion= findViewById(R.id.discussion);
-        me=findViewById(R.id.me);
+        my=findViewById(R.id.my);
 
         reservation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +54,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        me.setOnClickListener(new View.OnClickListener() {
+        my.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent3=new Intent(MainActivity.this, my.class);
