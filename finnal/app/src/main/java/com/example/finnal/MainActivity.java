@@ -11,10 +11,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 public class MainActivity extends Activity {
-    private Button shouye,yuyue,taolun,wode;
+    private Button shouye,yuyue,comment,wode;
     private ViewHolder holder;
     private Tuijian tuijian;
     String name=null;
@@ -35,7 +33,7 @@ public class MainActivity extends Activity {
     private void initView() {
         shouye= findViewById(R.id.shouye);
         yuyue= findViewById(R.id.yuyue);
-        taolun= findViewById(R.id.taolun);
+        comment= findViewById(R.id.comment);
         wode=findViewById(R.id.wode);
 
         yuyue.setOnClickListener(new View.OnClickListener() {
@@ -47,11 +45,11 @@ public class MainActivity extends Activity {
             }
         });
 
-        taolun.setOnClickListener(new View.OnClickListener() {
+        comment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent2=new Intent(MainActivity.this,taolun.class);
+                Intent intent2=new Intent(MainActivity.this, comment.class);
                 intent2.putExtra("username", name);
                 startActivity(intent2);
             }
