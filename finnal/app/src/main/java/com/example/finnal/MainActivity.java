@@ -31,10 +31,10 @@ public class MainActivity extends Activity {
     }
 
     private void initView() {
-        home= findViewById(R.id.shouye);
-        reservation= findViewById(R.id.yuyue);
-        discussion= findViewById(R.id.taolun);
-        me=findViewById(R.id.wode);
+        home= findViewById(R.id.home);
+        reservation= findViewById(R.id.reservation);
+        discussion= findViewById(R.id.discussion);
+        me=findViewById(R.id.me);
 
         discussion.setOnClickListener(new View.OnClickListener() {
             @Override
