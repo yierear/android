@@ -35,7 +35,7 @@
             android:name=".my"
             android:exported="false" />
         <activity
-            android:name=".taolun"
+            android:name=".comment"
             android:exported="false" />
         <activity
             android:name=".reserve"

@@ -18,14 +18,12 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 //讨论页
 
-public class taolun extends Activity {
+public class comment extends Activity {
     private ListView mListView;
     private Button mBtn_insert;
-    private EditText wenben;
+    private EditText text;
     private SimpleCursorAdapter mSimpleCursorAdapter;
     private SQLiteDatabase mDbWriter;
     private DBHelper dbhelper;
@@ -33,7 +31,7 @@ public class taolun extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_taolun);
+        setContentView(R.layout.activity_comment);
         initView();
 
         Intent intent=this.getIntent();
@@ -43,21 +41,21 @@ public class taolun extends Activity {
             @Override
             public void onClick(View v) {
                 insertData();
-                wenben.setText("");
+                text.setText("");
             }
         });
 
         dbhelper=new DBHelper(this);
         mDbWriter = dbhelper.getWritableDatabase();
 
-        mSimpleCursorAdapter =new SimpleCursorAdapter(taolun.this,R.layout.taolun_item_layout,null,
+        mSimpleCursorAdapter =new SimpleCursorAdapter(comment.this,R.layout.taolun_item_layout,null,
                 new String[]{"userid","pinglun"},new int[]{R.id.id,R.id.pinglunlist}, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
         mListView.setAdapter(mSimpleCursorAdapter);
         refreshListview();
         mListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long l) {
-                new AlertDialog.Builder(taolun.this).setTitle("提示").setMessage("是否删除该评论")
+                new AlertDialog.Builder(comment.this).setTitle("提示").setMessage("是否删除该评论")
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -74,7 +72,7 @@ public class taolun extends Activity {
     private void initView() {
         mListView =  findViewById(R.id.myListview);
         mBtn_insert =  findViewById(R.id.insert);
-        wenben =  findViewById(R.id.xiepinglun);
+        text =  findViewById(R.id.xiepinglun);
     }
 
     public void refreshListview() {
@@ -84,23 +82,23 @@ public class taolun extends Activity {
     public void insertData() {
         ContentValues mContentValues = new ContentValues();
         mContentValues.put("userid", name);
-        mContentValues.put("pinglun", wenben.getText().toString().trim());
+        mContentValues.put("pinglun", text.getText().toString().trim());
         mDbWriter.insert("pinglun", null, mContentValues);
         refreshListview();
     }
-    public void deleteData(int positon) {
+    public void deleteData(int position) {
         Cursor mCursor = mSimpleCursorAdapter.getCursor();
-        mCursor.moveToPosition(positon);
+        mCursor.moveToPosition(position);
         @SuppressLint("Range") int itemId = mCursor.getInt(mCursor.getColumnIndex("_id"));
         @SuppressLint("Range") String username = mCursor.getString(mCursor.getColumnIndex("userid"));
         if(username.equals(name)){
             mDbWriter.delete("pinglun", "_id=?", new String[]{itemId + ""});
             refreshListview();
         }else if(username.length()==0){
-            Toast.makeText(taolun.this,"您无权删除游客信息！！", Toast.LENGTH_SHORT).show();
+            Toast.makeText(comment.this,"您无权删除游客信息！！", Toast.LENGTH_SHORT).show();
         }
         else{
-            new AlertDialog.Builder(taolun.this).setTitle("提示").setMessage("您无权限删除该信息！").show();
+            new AlertDialog.Builder(comment.this).setTitle("提示").setMessage("您无权限删除该信息！").show();
         }
     }
 }
