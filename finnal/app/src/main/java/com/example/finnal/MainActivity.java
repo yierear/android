@@ -13,9 +13,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-    private Button home,reservation,discussion,my;//首页、预约、讨论、我的 按钮
-
-    private Button shouye,yuyue,comment,wode;
+    private Button home,reservation,comment,my;//首页、预约、讨论、我的 按钮
 
     private ViewHolder holder;
     private com.example.finnal.home home1;
@@ -24,7 +22,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ListView mLvTuijian=findViewById(R.id.reservation);
+        ListView mLvTuijian=findViewById(R.id.recomendation);
         initView();
         home1 =new home();
         Newadptor newadptor =new Newadptor();
@@ -37,13 +35,13 @@ public class MainActivity extends Activity {
 
         home= findViewById(R.id.home);
         reservation= findViewById(R.id.reservation);
-        discussion= findViewById(R.id.discussion);
+        comment= findViewById(R.id.comment);
         my=findViewById(R.id.my);
 
         home= findViewById(R.id.home);
-        yuyue= findViewById(R.id.yuyue);
+        reservation= findViewById(R.id.reservation);
         comment= findViewById(R.id.comment);
-        wode=findViewById(R.id.my);
+        my=findViewById(R.id.my);
 
         reservation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,8 +52,6 @@ public class MainActivity extends Activity {
             }
         });
 
-
-        discussion.setOnClickListener(new View.OnClickListener() {
 
         comment.setOnClickListener(new View.OnClickListener() {
 
