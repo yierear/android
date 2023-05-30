@@ -26,17 +26,18 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         ViewFlipper flipper = findViewById(R.id.flipper);
         flipper.startFlipping();
-        ListView mLvTuijian=findViewById(R.id.recomendation);
+        ListView mLvHome=findViewById(R.id.homelist);
         initView();
+
         home1 =new home();
         Newadptor newadptor =new Newadptor();
-        mLvTuijian.setAdapter(newadptor);
+        mLvHome.setAdapter(newadptor);
         Intent intent=this.getIntent();
         name=intent.getStringExtra("username");
     }
 
     private void initView() {
-
+    //按钮
         home= findViewById(R.id.home);
         reservation= findViewById(R.id.reservation);
         comment= findViewById(R.id.comment);
@@ -46,7 +47,7 @@ public class MainActivity extends Activity {
         reservation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1=new Intent(MainActivity.this,shucai_activity.class);
+                Intent intent1=new Intent(MainActivity.this, room_activity.class);
                 intent1.putExtra("username", name);
                 startActivity(intent1);
             }
@@ -95,9 +96,9 @@ public class MainActivity extends Activity {
             if(cview==null){
                 cview=View.inflate(MainActivity.this,R.layout.home_item_layout,null);
                 holder =new ViewHolder();
-                holder.title=cview.findViewById(R.id.recommendation_title);
+                holder.title=cview.findViewById(R.id.home_title);
                 holder.news=cview.findViewById(R.id.recommendation_text);
-                holder.img=cview.findViewById(R.id.recommendation_img);
+                holder.img=cview.findViewById(R.id.home_img);
 
                 cview.setTag(holder);
             }else{

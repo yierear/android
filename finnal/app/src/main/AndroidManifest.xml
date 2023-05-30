@@ -41,7 +41,7 @@
             android:name=".reserve"
             android:exported="false" />
         <activity
-            android:name=".shucai_activity"
+            android:name=".room_activity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -12,7 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 //推荐页
-public class shucai_activity extends Activity {
+public class room_activity extends Activity {
     private ViewHolder holder;
     private home home;
     String name;
@@ -33,7 +33,7 @@ public class shucai_activity extends Activity {
         mLvshucai.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent3=new Intent(shucai_activity.this, reserve.class);
+                Intent intent3=new Intent(room_activity.this, reserve.class);
                 intent3.putExtra("username",name);
                 startActivity(intent3);
             }
@@ -61,11 +61,11 @@ public class shucai_activity extends Activity {
         @Override
         public View getView(int i, View cview, ViewGroup viewGroup) {
             if(cview==null){
-                cview=View.inflate(shucai_activity.this,R.layout.recom_item_layout,null);
+                cview=View.inflate(room_activity.this,R.layout.home_item_layout,null);
                 holder =new ViewHolder();
-                holder.title=cview.findViewById(R.id.recommendation_title);
+                holder.title=cview.findViewById(R.id.home_title);
                 holder.news=cview.findViewById(R.id.recommendation_text);
-                holder.img=cview.findViewById(R.id.recommendation_img);
+                holder.img=cview.findViewById(R.id.home_img);
 
                 cview.setTag(holder);
             }else{
