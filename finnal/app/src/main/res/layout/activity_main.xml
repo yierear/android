@@ -14,21 +14,57 @@
         <!--顶部固定-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="20dp">
+            android:layout_height="180dp">
+            <!--轮播图-->
+
+            <ViewFlipper
+                android:id="@+id/flipper"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="400dp"
+                    android:layout_height="180dp"
+                    android:src="@drawable/lib1" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="400dp"
+                    android:layout_height="180dp"
+                    android:src="@drawable/lib2" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="400dp"
+                    android:layout_height="180dp"
+                    android:src="@drawable/lib3" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="400dp"
+                    android:layout_height="180dp"
+                    android:src="@drawable/lib4" />
+            </ViewFlipper>
         </LinearLayout>
         <!--中间部分-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="687dp">
-            <ListView
-                android:id="@+id/recomendation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:divider="#00000000"
-                android:dividerHeight="30dp">
+            android:layout_height="500dp"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal">
+            <!--列表-->
 
-            </ListView>
+                <ListView
+                    android:id="@+id/recomendation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="#00000000"
+                    android:dividerHeight="30dp">
+                </ListView>
         </LinearLayout>
+        <!--底部部分-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp">
