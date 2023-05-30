@@ -16,8 +16,8 @@ import java.util.Date;
 import java.util.Locale;
 
 public class reserve extends Activity {
-    private Button button1,button2,button3,button4,backbutton;
-    TextView text1,text2,text3,text4;
+    private Button button1,button2,button3,button4,button5,button6,button7,backbutton;
+    TextView text1,text2,text3,text4,text5,text6,text7;
     private int year;
     private int month;
     private int day;
@@ -148,6 +148,72 @@ public class reserve extends Activity {
                 dpd.show();
             }
         });
+        text5.setText("未预约");
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatePickerDialog dpd=new DatePickerDialog(reserve.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int myyear, int monthOfYear, int dayOfMonth) {
+                        text5.setText(myyear+"-"+(monthOfYear+1)+"-"+dayOfMonth);
+                        year=myyear;
+                        month=monthOfYear;
+                        day=dayOfMonth;
+                        String s="5";
+                        ContentValues mContentValues = new ContentValues();
+                        mContentValues.put("userid", name);
+                        mContentValues.put("pinzhong",s);
+                        mContentValues.put("data", text5.getText().toString().trim());
+                        mDbWriter.insert("yuyue", null, mContentValues);
+                    }
+                },year,month,day);
+                dpd.show();
+            }
+        });
+        text6.setText("未预约");
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatePickerDialog dpd=new DatePickerDialog(reserve.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int myyear, int monthOfYear, int dayOfMonth) {
+                        text6.setText(myyear+"-"+(monthOfYear+1)+"-"+dayOfMonth);
+                        year=myyear;
+                        month=monthOfYear;
+                        day=dayOfMonth;
+                        String s="6";
+                        ContentValues mContentValues = new ContentValues();
+                        mContentValues.put("userid", name);
+                        mContentValues.put("pinzhong",s);
+                        mContentValues.put("data", text6.getText().toString().trim());
+                        mDbWriter.insert("yuyue", null, mContentValues);
+                    }
+                },year,month,day);
+                dpd.show();
+            }
+        });
+        text7.setText("未预约");
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatePickerDialog dpd=new DatePickerDialog(reserve.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int myyear, int monthOfYear, int dayOfMonth) {
+                        text7.setText(myyear+"-"+(monthOfYear+1)+"-"+dayOfMonth);
+                        year=myyear;
+                        month=monthOfYear;
+                        day=dayOfMonth;
+                        String s="7";
+                        ContentValues mContentValues = new ContentValues();
+                        mContentValues.put("userid", name);
+                        mContentValues.put("pinzhong",s);
+                        mContentValues.put("data", text7.getText().toString().trim());
+                        mDbWriter.insert("yuyue", null, mContentValues);
+                    }
+                },year,month,day);
+                dpd.show();
+            }
+        });
     backbutton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -162,12 +228,18 @@ public class reserve extends Activity {
         button1 =  findViewById(R.id.yuyuebutton1);
         button2 =  findViewById(R.id.yuyuebutton2);
         button3 =  findViewById(R.id.yuyuebutton3);
-        button4 =   findViewById(R.id.yuyuebutton4);
+        button4 = findViewById(R.id.yuyuebutton4);
+        button5 = findViewById(R.id.yuyuebutton5);
+        button6 = findViewById(R.id.yuyuebutton6);
+        button7 = findViewById(R.id.yuyuebutton7);
         backbutton=findViewById(R.id.fanhui);
 
         text1 =findViewById(R.id.yuyuetext1);
         text2 =findViewById(R.id.yuyuetext2);
         text3 =findViewById(R.id.yuyuetext3);
         text4 =findViewById(R.id.yuyuetext4);
+        text5 =findViewById(R.id.yuyuetext5);
+        text6 =findViewById(R.id.yuyuetext6);
+        text7 =findViewById(R.id.yuyuetext7);
     }
 }
