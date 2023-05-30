@@ -38,10 +38,6 @@ public class MainActivity extends Activity {
         comment= findViewById(R.id.comment);
         my=findViewById(R.id.my);
 
-        home= findViewById(R.id.home);
-        reservation= findViewById(R.id.reservation);
-        comment= findViewById(R.id.comment);
-        my=findViewById(R.id.my);
 
         reservation.setOnClickListener(new View.OnClickListener() {
             @Override
