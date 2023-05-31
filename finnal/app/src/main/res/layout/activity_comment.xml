@@ -9,10 +9,11 @@
     android:layout_marginRight="10dp"
     android:layout_marginTop="20dp"
     android:orientation="vertical">
+
     <ListView
         android:id="@+id/myListview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="600dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,15 +23,22 @@
 
         <EditText
             android:id="@+id/xiepinglun"
-            android:layout_width="0dp"
+            android:layout_width="260dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
             android:gravity="center"/>
         <Button
-            android:id="@+id/insert"
-            android:layout_width="0dp"
+            android:id="@+id/send_picture"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:background="@color/SmallGreen"
+            android:text="图片"/>
+        <Button
+            android:id="@+id/insert"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@color/SmallGreen"
             android:text="发表"/>
 
     </LinearLayout>

@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 public class MainActivity extends Activity {
 
@@ -22,6 +23,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ViewFlipper flipper = findViewById(R.id.flipper);
+        flipper.startFlipping();
         ListView mLvTuijian=findViewById(R.id.recomendation);
         initView();
         home1 =new home();
@@ -89,7 +92,7 @@ public class MainActivity extends Activity {
         @Override
         public View getView(int i, View cview, ViewGroup viewGroup) {
             if(cview==null){
-                cview=View.inflate(MainActivity.this,R.layout.recom_item_layout,null);
+                cview=View.inflate(MainActivity.this,R.layout.home_item_layout,null);
                 holder =new ViewHolder();
                 holder.title=cview.findViewById(R.id.recommendation_title);
                 holder.news=cview.findViewById(R.id.recommendation_text);
