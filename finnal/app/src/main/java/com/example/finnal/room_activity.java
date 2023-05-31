@@ -19,11 +19,11 @@ public class room_activity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shucai);
+        setContentView(R.layout.activity_room);
 
         Intent intent=getIntent();
         name=intent.getStringExtra("username");
-        ListView mLvshucai=findViewById(R.id.yuyue);
+        ListView mLvshucai=findViewById(R.id.reservation);
 
         home =new home();
 
