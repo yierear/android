@@ -32,7 +32,8 @@
                 android:text="预约"
                 android:layout_marginTop="28dp"
                 android:layout_marginLeft="35dp"
-                android:id="@+id/yuyuebutton1"/>
+                android:id="@+id/yuyuebutton1"
+                android:background="@color/SmallGreen"/>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -59,7 +60,8 @@
                 android:layout_height="wrap_content"
                 android:text="预约"
                 android:layout_marginTop="28dp"
-                android:layout_marginLeft="33dp"/>
+                android:layout_marginLeft="33dp"
+                android:background="@color/SmallGreen"/>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -86,7 +88,38 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
                 android:layout_marginLeft="33dp"
-                android:text="预约"/>
+                android:text="预约"
+                android:background="@color/SmallGreen"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="5dp">
+        <ImageView
+            android:layout_width="227dp"
+            android:layout_height="159dp"
+            android:src="@drawable/selfstudyroom"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/yuyuetext4"
+                android:textSize="25dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="10dp"/>
+            <Button
+                android:id="@+id/yuyuebutton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预约"
+                android:layout_marginTop="28dp"
+                android:layout_marginLeft="33dp"
+                android:background="@color/SmallGreen"/>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -105,17 +138,78 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/yuyuetext4"
+                android:id="@+id/yuyuetext5"
                 android:textSize="25dp"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"/>
             <Button
-                android:id="@+id/yuyuebutton4"
+                android:id="@+id/yuyuebutton5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="预约"
                 android:layout_marginTop="28dp"
-                android:layout_marginLeft="33dp"/>
+                android:layout_marginLeft="33dp"
+                android:background="@color/SmallGreen"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="5dp">
+        <ImageView
+            android:layout_width="227dp"
+            android:layout_height="159dp"
+            android:src="@drawable/seminarroom"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/yuyuetext6"
+                android:textSize="25dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="10dp"/>
+            <Button
+                android:id="@+id/yuyuebutton6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预约"
+                android:layout_marginTop="28dp"
+                android:layout_marginLeft="33dp"
+                android:background="@color/SmallGreen"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="5dp">
+        <ImageView
+            android:layout_width="227dp"
+            android:layout_height="159dp"
+            android:src="@drawable/developmentroom"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/yuyuetext7"
+                android:textSize="25dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="10dp"/>
+            <Button
+                android:id="@+id/yuyuebutton7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预约"
+                android:layout_marginTop="28dp"
+                android:layout_marginLeft="33dp"
+                android:background="@color/SmallGreen"/>
         </LinearLayout>
     </LinearLayout>
     <Button
@@ -124,7 +218,8 @@
         android:id="@+id/fanhui"
         android:layout_marginRight="2dp"
         android:layout_marginTop="20dp"
-        android:text="返回"/>
+        android:text="返回"
+        android:background="@color/SmallGreen"/>
 
 
 </LinearLayout>
