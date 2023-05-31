@@ -28,6 +28,7 @@ public class comment extends Activity {
     private SQLiteDatabase mDbWriter;
     private DBHelper dbhelper;
     String name=null;
+    int signal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +37,7 @@ public class comment extends Activity {
 
         Intent intent=this.getIntent();
         name=intent.getStringExtra("username");
-
+        signal=intent.getIntExtra("flag",0);
         mBtn_insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -14,10 +14,10 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
 
     private Button home,reservation,comment,my;//首页、预约、讨论、我的 按钮
-
     private ViewHolder holder;
     private com.example.finnal.home home1;
     String name=null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

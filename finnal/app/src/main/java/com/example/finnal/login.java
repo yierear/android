@@ -21,6 +21,7 @@ public class login extends Activity {
     EditText password;
     Button login;
     Button register;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +34,6 @@ public class login extends Activity {
             public void onClick(View view) {
                 String name=username.getText().toString();
                 String pwd=password.getText().toString();
-
 
                 Cursor cursor=dbHelper.getReadableDatabase().query("user",null,"username=? and password=?",new String[]{name,pwd},null,null,null);
                 ArrayList<Map<String,String>> resultList=new ArrayList<Map<String,String>>();
@@ -76,7 +76,6 @@ public class login extends Activity {
             dbHelper.close();
         }
     }
-
 
 
 }
