@@ -1,15 +1,24 @@
 package com.example.finnal;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
+import android.app.TimePickerDialog;
 import android.content.ContentValues;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.provider.AlarmClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -21,8 +30,10 @@ public class reserve extends Activity {
     private int year;
     private int month;
     private int day;
+    private int alarmDay;
     private SQLiteDatabase mDbWriter;
     private DBHelper dbhelper;
+    private AlarmManager alarmManager;
     String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +42,7 @@ public class reserve extends Activity {
 
         dbhelper = new DBHelper(this);
         mDbWriter = dbhelper.getWritableDatabase();
+        alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent=getIntent();
         name=intent.getStringExtra("username");
         initView();
@@ -59,6 +71,7 @@ public class reserve extends Activity {
                         mContentValues.put("pinzhong",s);
                         mContentValues.put("data", text1.getText().toString().trim());
                         mDbWriter.insert("yuyue", null, mContentValues);
+                        setClock(view);
                     }
                     },year,month,day);
                 dpd.show();
@@ -66,6 +79,7 @@ public class reserve extends Activity {
         });
         myCalendar.setTime(myDate);//为Calendar对象设置时间为当前日期
 
+        alarmDay = day;
         year = myCalendar.get(Calendar.YEAR);
         month = myCalendar.get(Calendar.MONTH);
         day = myCalendar.get(Calendar.DAY_OF_MONTH);
@@ -87,6 +101,7 @@ public class reserve extends Activity {
                         mContentValues.put("pinzhong",s);
                         mContentValues.put("data", text2.getText().toString().trim());
                         mDbWriter.insert("yuyue", null, mContentValues);
+                        setClock(view);
                     }
                 },year,month,day);
                 dpd.show();
@@ -115,6 +130,7 @@ public class reserve extends Activity {
                         mContentValues.put("pinzhong",s);
                         mContentValues.put("data", text3.getText().toString().trim());
                         mDbWriter.insert("yuyue", null, mContentValues);
+                        setClock(view);
                     }
                 },year,month,day);
                 dpd.show();
@@ -143,6 +159,7 @@ public class reserve extends Activity {
                         mContentValues.put("pinzhong",s);
                         mContentValues.put("data", text4.getText().toString().trim());
                         mDbWriter.insert("yuyue", null, mContentValues);
+                        setClock(view);
                     }
                 },year,month,day);
                 dpd.show();
@@ -165,6 +182,7 @@ public class reserve extends Activity {
                         mContentValues.put("pinzhong",s);
                         mContentValues.put("data", text5.getText().toString().trim());
                         mDbWriter.insert("yuyue", null, mContentValues);
+                        setClock(view);
                     }
                 },year,month,day);
                 dpd.show();
@@ -187,6 +205,7 @@ public class reserve extends Activity {
                         mContentValues.put("pinzhong",s);
                         mContentValues.put("data", text6.getText().toString().trim());
                         mDbWriter.insert("yuyue", null, mContentValues);
+                        setClock(view);
                     }
                 },year,month,day);
                 dpd.show();
@@ -209,6 +228,7 @@ public class reserve extends Activity {
                         mContentValues.put("pinzhong",s);
                         mContentValues.put("data", text7.getText().toString().trim());
                         mDbWriter.insert("yuyue", null, mContentValues);
+                        setClock(view);
                     }
                 },year,month,day);
                 dpd.show();
@@ -242,4 +262,26 @@ public class reserve extends Activity {
         text6 =findViewById(R.id.yuyuetext6);
         text7 =findViewById(R.id.yuyuetext7);
     }
+
+    public void setClock(View view){
+        Calendar calendar = Calendar.getInstance();
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                Calendar c = Calendar.getInstance();
+                c.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                c.set(Calendar.MINUTE, minute);
+                Intent intent = new Intent(reserve.this, AlarmReceiver.class);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(reserve.this,0X102, intent,0);
+                alarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+                Toast.makeText(reserve.this, "预约成功", Toast.LENGTH_SHORT).show();
+            }
+        },hour,minute,true);
+        timePickerDialog.show();
+    }
+
 }
+
