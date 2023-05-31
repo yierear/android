@@ -35,6 +35,7 @@ public class reserve extends Activity {
     private DBHelper dbhelper;
     private AlarmManager alarmManager;
     String name;
+    int loginflag;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +46,7 @@ public class reserve extends Activity {
         alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent=getIntent();
         name=intent.getStringExtra("username");
+        loginflag=intent.getIntExtra("loginflag",0);
         initView();
         Calendar myCalendar = Calendar.getInstance(Locale.CHINA);
         Date myDate = new Date();
@@ -58,24 +60,28 @@ public class reserve extends Activity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatePickerDialog dpd=new DatePickerDialog(reserve.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int myyear, int monthOfYear, int dayOfMonth) {
-                        text1.setText(myyear+"-"+(monthOfYear+1)+"-"+dayOfMonth);
-                        year=myyear;
-                        month=monthOfYear;
-                        day=dayOfMonth;
-                        String s="1";
-                        ContentValues mContentValues = new ContentValues();
-                        mContentValues.put("userid", name);
-                        mContentValues.put("pinzhong",s);
-                        mContentValues.put("data", text1.getText().toString().trim());
-                        mDbWriter.insert("yuyue", null, mContentValues);
-                        setClock(view);
-                    }
+                if(loginflag==1){
+                    DatePickerDialog dpd=new DatePickerDialog(reserve.this, new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(DatePicker view, int myyear, int monthOfYear, int dayOfMonth) {
+                            text1.setText(myyear+"-"+(monthOfYear+1)+"-"+dayOfMonth);
+                            year=myyear;
+                            month=monthOfYear;
+                            day=dayOfMonth;
+                            String s="1";
+                            ContentValues mContentValues = new ContentValues();
+                            mContentValues.put("userid", name);
+                            mContentValues.put("type",s);
+                            mContentValues.put("data", text1.getText().toString().trim());
+                            mDbWriter.insert("reserve", null, mContentValues);
+                            setClock(view);
+                        }
                     },year,month,day);
-                dpd.show();
-                    }
+                    dpd.show();
+                }else if (loginflag==0){
+                    Toast.makeText(reserve.this,"请先登录",Toast.LENGTH_SHORT);
+                }
+            }
         });
         myCalendar.setTime(myDate);//为Calendar对象设置时间为当前日期
 
@@ -98,9 +104,9 @@ public class reserve extends Activity {
                         String s="2";
                         ContentValues mContentValues = new ContentValues();
                         mContentValues.put("userid", name);
-                        mContentValues.put("pinzhong",s);
+                        mContentValues.put("type",s);
                         mContentValues.put("data", text2.getText().toString().trim());
-                        mDbWriter.insert("yuyue", null, mContentValues);
+                        mDbWriter.insert("reserve", null, mContentValues);
                         setClock(view);
                     }
                 },year,month,day);
@@ -127,9 +133,9 @@ public class reserve extends Activity {
                         String s="3";
                         ContentValues mContentValues = new ContentValues();
                         mContentValues.put("userid", name);
-                        mContentValues.put("pinzhong",s);
+                        mContentValues.put("type",s);
                         mContentValues.put("data", text3.getText().toString().trim());
-                        mDbWriter.insert("yuyue", null, mContentValues);
+                        mDbWriter.insert("reserve", null, mContentValues);
                         setClock(view);
                     }
                 },year,month,day);
@@ -156,9 +162,9 @@ public class reserve extends Activity {
                         String s="4";
                         ContentValues mContentValues = new ContentValues();
                         mContentValues.put("userid", name);
-                        mContentValues.put("pinzhong",s);
+                        mContentValues.put("type",s);
                         mContentValues.put("data", text4.getText().toString().trim());
-                        mDbWriter.insert("yuyue", null, mContentValues);
+                        mDbWriter.insert("reserve", null, mContentValues);
                         setClock(view);
                     }
                 },year,month,day);
@@ -179,9 +185,9 @@ public class reserve extends Activity {
                         String s="5";
                         ContentValues mContentValues = new ContentValues();
                         mContentValues.put("userid", name);
-                        mContentValues.put("pinzhong",s);
+                        mContentValues.put("type",s);
                         mContentValues.put("data", text5.getText().toString().trim());
-                        mDbWriter.insert("yuyue", null, mContentValues);
+                        mDbWriter.insert("reserve", null, mContentValues);
                         setClock(view);
                     }
                 },year,month,day);
@@ -202,9 +208,9 @@ public class reserve extends Activity {
                         String s="6";
                         ContentValues mContentValues = new ContentValues();
                         mContentValues.put("userid", name);
-                        mContentValues.put("pinzhong",s);
+                        mContentValues.put("type",s);
                         mContentValues.put("data", text6.getText().toString().trim());
-                        mDbWriter.insert("yuyue", null, mContentValues);
+                        mDbWriter.insert("reserve", null, mContentValues);
                         setClock(view);
                     }
                 },year,month,day);
@@ -225,9 +231,9 @@ public class reserve extends Activity {
                         String s="7";
                         ContentValues mContentValues = new ContentValues();
                         mContentValues.put("userid", name);
-                        mContentValues.put("pinzhong",s);
+                        mContentValues.put("type",s);
                         mContentValues.put("data", text7.getText().toString().trim());
-                        mDbWriter.insert("yuyue", null, mContentValues);
+                        mDbWriter.insert("reserve", null, mContentValues);
                         setClock(view);
                     }
                 },year,month,day);

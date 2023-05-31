@@ -21,7 +21,7 @@ public class login extends Activity {
     EditText password;
     Button login;
     Button register;
-
+    int flag = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,8 +48,10 @@ public class login extends Activity {
                 }
                 else {
                     Toast.makeText(login.this,"登录成功!",Toast.LENGTH_SHORT).show();
+                    flag = 1;
                     Intent intent=new Intent(login.this,MainActivity.class);
                     intent.putExtra("username",name);
+                    intent.putExtra("loginflag",flag);
                     startActivity(intent);
                 }
             }

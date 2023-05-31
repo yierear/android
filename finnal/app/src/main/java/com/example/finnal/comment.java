@@ -50,7 +50,7 @@ public class comment extends Activity {
         mDbWriter = dbhelper.getWritableDatabase();
 
         mSimpleCursorAdapter =new SimpleCursorAdapter(comment.this,R.layout.taolun_item_layout,null,
-                new String[]{"userid","pinglun"},new int[]{R.id.id,R.id.pinglunlist}, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
+                new String[]{"userid","comment"},new int[]{R.id.id,R.id.pinglunlist}, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
         mListView.setAdapter(mSimpleCursorAdapter);
         refreshListview();
         mListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -77,14 +77,14 @@ public class comment extends Activity {
     }
 
     public void refreshListview() {
-        Cursor mCursor = mDbWriter.query("pinglun", null, null, null, null, null, null);
+        Cursor mCursor = mDbWriter.query("comment", null, null, null, null, null, null);
         mSimpleCursorAdapter.changeCursor(mCursor);
     }
     public void insertData() {
         ContentValues mContentValues = new ContentValues();
         mContentValues.put("userid", name);
-        mContentValues.put("pinglun", text.getText().toString().trim());
-        mDbWriter.insert("pinglun", null, mContentValues);
+        mContentValues.put("comment", text.getText().toString().trim());
+        mDbWriter.insert("comment", null, mContentValues);
         refreshListview();
     }
     public void deleteData(int position) {
@@ -93,7 +93,7 @@ public class comment extends Activity {
         @SuppressLint("Range") int itemId = mCursor.getInt(mCursor.getColumnIndex("_id"));
         @SuppressLint("Range") String username = mCursor.getString(mCursor.getColumnIndex("userid"));
         if(username.equals(name)){
-            mDbWriter.delete("pinglun", "_id=?", new String[]{itemId + ""});
+            mDbWriter.delete("comment", "_id=?", new String[]{itemId + ""});
             refreshListview();
         }else if(username.length()==0){
             Toast.makeText(comment.this,"您无权删除游客信息！！", Toast.LENGTH_SHORT).show();

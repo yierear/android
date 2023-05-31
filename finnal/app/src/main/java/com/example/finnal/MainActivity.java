@@ -105,7 +105,7 @@ public class MainActivity extends Activity {
             }
 
             holder.title.setText(com.example.finnal.home.getNames()[i]);
-            holder.news.setText(com.example.finnal.home.getNews()[i]);
+           // holder.news.setText(com.example.finnal.home.getNews()[i]);
             holder.img.setBackgroundResource(com.example.finnal.home.getIcons()[i]);
             return cview;
         }

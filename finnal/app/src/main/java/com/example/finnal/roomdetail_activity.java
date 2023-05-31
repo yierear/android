@@ -11,9 +11,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-//推荐页
-public class room_activity extends Activity {
-    private ViewHolder holder;
+public class roomdetail_activity extends Activity {
+    private roomdetail_activity.ViewHolder holder;
     private home home;
     String name;
     @Override
@@ -23,17 +22,17 @@ public class room_activity extends Activity {
 
         Intent intent=getIntent();
         name=intent.getStringExtra("username");
-        ListView mLvshucai=findViewById(R.id.reservation);
+        ListView mLvroom=findViewById(R.id.reservation);
 
         home =new home();
 
-        Yuyueadaptor yuyueadaptor=new Yuyueadaptor();
-        mLvshucai.setAdapter(yuyueadaptor);
+        roomdetail_activity.reserveadaptor reserveadaptor=new roomdetail_activity.reserveadaptor();
+        mLvroom.setAdapter(reserveadaptor);
 
-        mLvshucai.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mLvroom.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent3=new Intent(room_activity.this, reserve.class);
+                Intent intent3=new Intent(roomdetail_activity.this, reserve.class);
                 intent3.putExtra("username",name);
                 startActivity(intent3);
             }
@@ -42,7 +41,7 @@ public class room_activity extends Activity {
     }
 
     //预约适配器
-    private class Yuyueadaptor extends BaseAdapter{
+    private class reserveadaptor extends BaseAdapter {
         @Override
         public int getCount() {
             return home.getNames().length;
@@ -61,15 +60,15 @@ public class room_activity extends Activity {
         @Override
         public View getView(int i, View cview, ViewGroup viewGroup) {
             if(cview==null){
-                cview=View.inflate(room_activity.this,R.layout.home_item_layout,null);
-                holder =new ViewHolder();
+                cview=View.inflate(roomdetail_activity.this,R.layout.home_item_layout,null);
+                holder =new roomdetail_activity.ViewHolder();
                 holder.title=cview.findViewById(R.id.home_title);
                 holder.news=cview.findViewById(R.id.recommendation_text);
                 holder.img=cview.findViewById(R.id.home_img);
 
                 cview.setTag(holder);
             }else{
-                holder=(ViewHolder) cview.getTag();
+                holder=(roomdetail_activity.ViewHolder) cview.getTag();
             }
 
             holder.title.setText(home.getNames()[i]);
