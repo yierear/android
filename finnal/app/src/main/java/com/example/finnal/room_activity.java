@@ -27,7 +27,7 @@ public class room_activity extends Activity {
 
         home =new home();
 
-        Yuyueadaptor yuyueadaptor=new Yuyueadaptor();
+        Reserveadaptor yuyueadaptor=new Reserveadaptor();
         mLvshucai.setAdapter(yuyueadaptor);
 
         mLvshucai.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -42,7 +42,7 @@ public class room_activity extends Activity {
     }
 
     //预约适配器
-    private class Yuyueadaptor extends BaseAdapter{
+    private class Reserveadaptor extends BaseAdapter{
         @Override
         public int getCount() {
             return home.getNames().length;
