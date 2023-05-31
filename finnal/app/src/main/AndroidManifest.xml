@@ -34,22 +34,22 @@
         </activity>
         <activity
             android:name=".register"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".login"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".my"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".comment"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".reserve"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
-            android:name=".room_activity"
-            android:exported="false" />
+            android:name=".shucai_activity"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="false" />
