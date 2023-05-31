@@ -60,27 +60,23 @@ public class reserve extends Activity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(loginflag==1){
-                    DatePickerDialog dpd=new DatePickerDialog(reserve.this, new DatePickerDialog.OnDateSetListener() {
-                        @Override
-                        public void onDateSet(DatePicker view, int myyear, int monthOfYear, int dayOfMonth) {
-                            text1.setText(myyear+"-"+(monthOfYear+1)+"-"+dayOfMonth);
-                            year=myyear;
-                            month=monthOfYear;
-                            day=dayOfMonth;
-                            String s="1";
-                            ContentValues mContentValues = new ContentValues();
-                            mContentValues.put("userid", name);
-                            mContentValues.put("type",s);
-                            mContentValues.put("data", text1.getText().toString().trim());
-                            mDbWriter.insert("reserve", null, mContentValues);
-                            setClock(view);
-                        }
-                    },year,month,day);
-                    dpd.show();
-                }else if (loginflag==0){
-                    Toast.makeText(reserve.this,"请先登录",Toast.LENGTH_SHORT);
-                }
+                DatePickerDialog dpd=new DatePickerDialog(reserve.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int myyear, int monthOfYear, int dayOfMonth) {
+                        text1.setText(myyear+"-"+(monthOfYear+1)+"-"+dayOfMonth);
+                        year=myyear;
+                        month=monthOfYear;
+                        day=dayOfMonth;
+                        String s="1";
+                        ContentValues mContentValues = new ContentValues();
+                        mContentValues.put("userid", name);
+                        mContentValues.put("type",s);
+                        mContentValues.put("data", text1.getText().toString().trim());
+                        mDbWriter.insert("reserve", null, mContentValues);
+                        setClock(view);
+                    }
+                },year,month,day);
+                dpd.show();
             }
         });
         myCalendar.setTime(myDate);//为Calendar对象设置时间为当前日期
