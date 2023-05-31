@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25dp"
-                android:id="@+id/yuyuetext1"
+                android:id="@+id/reserveText1"
                 android:layout_marginLeft="33dp"
                 android:layout_marginTop="10dp"/>
             <Button
@@ -32,7 +32,7 @@
                 android:text="预约"
                 android:layout_marginTop="28dp"
                 android:layout_marginLeft="35dp"
-                android:id="@+id/yuyuebutton1"
+                android:id="@+id/reserveBtn1"
                 android:background="@color/SmallGreen"/>
         </LinearLayout>
     </LinearLayout>
@@ -51,11 +51,11 @@
             android:orientation="vertical">
             <TextView android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/yuyuetext2"
+                android:id="@+id/reserveText2"
                 android:textSize="25dp"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"/>
-            <Button android:id="@+id/yuyuebutton2"
+            <Button android:id="@+id/reserveBtn2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="预约"
@@ -77,13 +77,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <TextView android:id="@+id/yuyuetext3"
+            <TextView android:id="@+id/reserveText3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25dp"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"/>
-            <Button android:id="@+id/yuyuebutton3"
+            <Button android:id="@+id/reserveBtn3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
@@ -108,12 +108,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/yuyuetext4"
+                android:id="@+id/reserveText4"
                 android:textSize="25dp"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"/>
             <Button
-                android:id="@+id/yuyuebutton4"
+                android:id="@+id/reserveBtn4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="预约"
@@ -138,12 +138,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/yuyuetext5"
+                android:id="@+id/reserveText5"
                 android:textSize="25dp"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"/>
             <Button
-                android:id="@+id/yuyuebutton5"
+                android:id="@+id/reserveBtn5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="预约"
@@ -168,12 +168,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/yuyuetext6"
+                android:id="@+id/reserveText6"
                 android:textSize="25dp"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"/>
             <Button
-                android:id="@+id/yuyuebutton6"
+                android:id="@+id/reserveBtn6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="预约"
@@ -198,12 +198,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/yuyuetext7"
+                android:id="@+id/reserveText7"
                 android:textSize="25dp"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"/>
             <Button
-                android:id="@+id/yuyuebutton7"
+                android:id="@+id/reserveBtn7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="预约"

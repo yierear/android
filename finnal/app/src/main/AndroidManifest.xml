@@ -6,9 +6,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/tubiao"
-        android:label="预约"
-        android:roundIcon="@drawable/tubiao"
+        android:icon="@drawable/logo"
+        android:label="阅馆"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Finnal"
         tools:targetApi="31">

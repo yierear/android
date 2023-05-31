@@ -247,22 +247,22 @@ public class reserve extends Activity {
     }
 
     private void initView() {
-        button1 =  findViewById(R.id.yuyuebutton1);
-        button2 =  findViewById(R.id.yuyuebutton2);
-        button3 =  findViewById(R.id.yuyuebutton3);
-        button4 = findViewById(R.id.yuyuebutton4);
-        button5 = findViewById(R.id.yuyuebutton5);
-        button6 = findViewById(R.id.yuyuebutton6);
-        button7 = findViewById(R.id.yuyuebutton7);
+        button1 =  findViewById(R.id.reserveBtn1);
+        button2 =  findViewById(R.id.reserveBtn2);
+        button3 =  findViewById(R.id.reserveBtn3);
+        button4 = findViewById(R.id.reserveBtn4);
+        button5 = findViewById(R.id.reserveBtn5);
+        button6 = findViewById(R.id.reserveBtn6);
+        button7 = findViewById(R.id.reserveBtn7);
         backbutton=findViewById(R.id.fanhui);
 
-        text1 =findViewById(R.id.yuyuetext1);
-        text2 =findViewById(R.id.yuyuetext2);
-        text3 =findViewById(R.id.yuyuetext3);
-        text4 =findViewById(R.id.yuyuetext4);
-        text5 =findViewById(R.id.yuyuetext5);
-        text6 =findViewById(R.id.yuyuetext6);
-        text7 =findViewById(R.id.yuyuetext7);
+        text1 =findViewById(R.id.reserveText1);
+        text2 =findViewById(R.id.reserveText2);
+        text3 =findViewById(R.id.reserveText3);
+        text4 =findViewById(R.id.reserveText4);
+        text5 =findViewById(R.id.reserveText5);
+        text6 =findViewById(R.id.reserveText6);
+        text7 =findViewById(R.id.reserveText7);
     }
 
     public void setClock(View view){
