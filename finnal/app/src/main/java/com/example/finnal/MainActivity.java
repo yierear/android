@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -14,10 +15,11 @@ import android.widget.ViewFlipper;
 
 public class MainActivity extends Activity {
 
-    private Button home,reservation,comment,my;//首页、预约、讨论、我的 按钮
+    private Button Bhome,Breservation,Bcomment,Bmy;//首页、预约、讨论、我的 按钮
     private ViewHolder holder;
     private com.example.finnal.home home1;
     String name=null;
+    private home home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,25 +27,31 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         ViewFlipper flipper = findViewById(R.id.flipper);
         flipper.startFlipping();
-        ListView mLvHome=findViewById(R.id.homelist);
+        ListView mLvHome=findViewById(R.id.homelist);//首页场地列表
         initView();
 
         home1 =new home();
         Newadptor newadptor =new Newadptor();
-        mLvHome.setAdapter(newadptor);
+        mLvHome.setAdapter(newadptor);//ListView
         Intent intent=this.getIntent();
         name=intent.getStringExtra("username");
+
+        mLvHome.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            public void onItemClick(AdapterView<?> adapterView,View view,int i,long l){
+                Intent intent3=new Intent(MainActivity.this, home_detail.class);
+                startActivity(intent3);
+            }
+        });
+
     }
 
     private void initView() {
     //按钮
-        home= findViewById(R.id.home);
-        reservation= findViewById(R.id.reservation);
-        comment= findViewById(R.id.comment);
-        my=findViewById(R.id.my);
-
-
-        reservation.setOnClickListener(new View.OnClickListener() {
+        Bhome= findViewById(R.id.home);
+        Breservation= findViewById(R.id.reservation);
+        Bcomment= findViewById(R.id.comment);
+        Bmy=findViewById(R.id.my);
+        Breservation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent1=new Intent(MainActivity.this, room_activity.class);
@@ -52,8 +60,7 @@ public class MainActivity extends Activity {
             }
         });
 
-
-        comment.setOnClickListener(new View.OnClickListener() {
+        Bcomment.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -64,7 +71,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        my.setOnClickListener(new View.OnClickListener() {
+        Bmy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent3=new Intent(MainActivity.this, my.class);
@@ -96,7 +103,7 @@ public class MainActivity extends Activity {
                 cview=View.inflate(MainActivity.this,R.layout.home_item_layout,null);
                 holder =new ViewHolder();
                 holder.title=cview.findViewById(R.id.home_title);
-                holder.news=cview.findViewById(R.id.recommendation_text);
+
                 holder.img=cview.findViewById(R.id.home_img);
 
                 cview.setTag(holder);
@@ -105,14 +112,14 @@ public class MainActivity extends Activity {
             }
 
             holder.title.setText(com.example.finnal.home.getNames()[i]);
-           // holder.news.setText(com.example.finnal.home.getNews()[i]);
+
             holder.img.setBackgroundResource(com.example.finnal.home.getIcons()[i]);
             return cview;
         }
     }
         private class ViewHolder{
         private TextView title;
-        private TextView news;
+
         private ImageView img;
     }
 }

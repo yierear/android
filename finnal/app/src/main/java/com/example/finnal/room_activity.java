@@ -10,31 +10,34 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 //推荐页
 public class room_activity extends Activity {
     private ViewHolder holder;
+    private com.example.finnal.home home1;
     private home home;
     String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room);
+        //ViewFlipper flipper = findViewById(R.id.flipper);
+        ListView mLvroom=findViewById(R.id.reservation);
 
         Intent intent=getIntent();
         name=intent.getStringExtra("username");
-        ListView mLvshucai=findViewById(R.id.reservation);
+
 
         home =new home();
 
-        Reserveadaptor yuyueadaptor=new Reserveadaptor();
-        mLvshucai.setAdapter(yuyueadaptor);
+        Reserveadaptor reservedaptor=new Reserveadaptor();
+        mLvroom.setAdapter(reservedaptor);
 
-        mLvshucai.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mLvroom.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent3=new Intent(room_activity.this, reserve.class);
-                intent3.putExtra("username",name);
                 startActivity(intent3);
             }
         });
@@ -64,7 +67,7 @@ public class room_activity extends Activity {
                 cview=View.inflate(room_activity.this,R.layout.home_item_layout,null);
                 holder =new ViewHolder();
                 holder.title=cview.findViewById(R.id.home_title);
-                holder.news=cview.findViewById(R.id.recommendation_text);
+                //holder.news=cview.findViewById(R.id.recommendation_text);
                 holder.img=cview.findViewById(R.id.home_img);
 
                 cview.setTag(holder);
@@ -81,7 +84,7 @@ public class room_activity extends Activity {
 
     private class ViewHolder{
         private TextView title;
-        private TextView news;
+        //private TextView news;
         private ImageView img;
     }
 }
