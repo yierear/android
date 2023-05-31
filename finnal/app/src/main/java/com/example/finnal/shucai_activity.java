@@ -61,7 +61,7 @@ public class shucai_activity extends Activity {
         @Override
         public View getView(int i, View cview, ViewGroup viewGroup) {
             if(cview==null){
-                cview=View.inflate(shucai_activity.this,R.layout.recom_item_layout,null);
+                cview=View.inflate(shucai_activity.this,R.layout.home_item_layout,null);
                 holder =new ViewHolder();
                 holder.title=cview.findViewById(R.id.recommendation_title);
                 holder.news=cview.findViewById(R.id.recommendation_text);
