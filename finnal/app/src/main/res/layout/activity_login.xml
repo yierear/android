@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".login">
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:orientation="vertical" android:layout_marginTop="50dp">
-        <TextView android:id="@+id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:text="IBook图书馆预约" android:textColor="@color/Title" android:layout_marginTop="15dp" android:textSize="30dp"/>
+        <TextView android:id="@+id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:text="BookIt阅馆" android:textColor="@color/Title" android:layout_marginTop="15dp" android:textSize="30dp"/>
         <EditText android:id="@+id/username" android:theme="@style/MyEditText" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginLeft="50dp" android:layout_marginRight="50dp" android:layout_marginTop="15dp" android:lines="1" android:hint="请输入您的用户名" android:ems="10">
             <requestFocus/>
         </EditText>
