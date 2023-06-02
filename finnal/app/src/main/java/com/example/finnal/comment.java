@@ -238,10 +238,13 @@ public class comment extends Activity {
                 }
                 break;
             case REQUEST_CODE_CAMERA:
-                if (resultCode == RESULT_OK) {
+                if (data!=null&&resultCode == RESULT_OK) {
                     mBitmap = BitmapFactory.decodeFile(mImagePath);
                 }
                 break;
+            default:
+                System.out.println("错误");
+                return;
         }
 
         // 转换为BitmapDrawable对象
