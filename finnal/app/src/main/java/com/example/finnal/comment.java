@@ -16,6 +16,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,8 +33,16 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.core.content.FileProvider;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Objects;
 
 //讨论页
 
@@ -53,6 +62,8 @@ public class comment extends Activity {
     private Bitmap mBitmap;
     private byte[] pic_byte;
     private String mImagePath;
+    private Uri imageUri;
+    private String path=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,8 +168,58 @@ public class comment extends Activity {
         root.findViewById(R.id.btn_open_camera).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent,REQUEST_CODE_CAMERA);
+                String imageName = new SimpleDateFormat("yyyyMMddHHmmss", Locale.getDefault()).format(new Date());
+//        File outputImage=new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/data/com.example.woundapplication/"+imageName+".jpg");
+
+                File outputImage = new File(getExternalCacheDir(), imageName+".jpg");
+
+                Objects.requireNonNull(outputImage.getParentFile()).mkdirs();
+//        Log.e("", outputImage.getAbsolutePath());
+                /*
+                创建一个File文件对象，用于存放摄像头拍下的图片，
+                把它存放在应用关联缓存目录下，调用getExternalCacheDir()可以得到这个目录，为什么要
+                用关联缓存目录呢？由于android6.0开始，读写sd卡列为了危险权限，使用的时候必须要有权限，
+                应用关联目录则可以跳过这一步
+                 */
+                try//判断图片是否存在，存在则删除在创建，不存在则直接创建
+                {
+                    if(outputImage.exists())
+                    {
+                        outputImage.delete();
+                    }
+                    boolean a = outputImage.createNewFile();
+                    Log.e("createNewFile", String.valueOf(a));
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+                if(Build.VERSION.SDK_INT>=24)
+                    //判断安卓的版本是否高于7.0，高于则调用高于的方法，低于则调用低于的方法
+                    //把文件转换成Uri对象
+                    /*
+                    因为android7.0以后直接使用本地真实路径是不安全的，会抛出异常。
+                    FileProvider是一种特殊的内容提供器，可以对数据进行保护
+                     */
+                {
+                    imageUri= FileProvider.getUriForFile(comment.this,
+                            "com.buildmaterialapplication.fileprovider",outputImage);
+                    //对应Mainfest中的provider
+//            imageUri=Uri.fromFile(outputImage);
+                    path=imageUri.getPath();
+                    Log.e(">7:",path);
+                }
+                else {
+                    imageUri= Uri.fromFile(outputImage);
+                    path=imageUri.getPath();
+
+                    Log.e("<7:",imageUri.getPath());
+
+                }
+
+                Intent intent0=new Intent("android.media.action.IMAGE_CAPTURE");
+                intent0.putExtra(MediaStore.EXTRA_OUTPUT,imageUri);
+                startActivityForResult(intent0,REQUEST_CODE_CAMERA);
                 mCameraDialog.dismiss();
             }
         });
@@ -238,13 +299,21 @@ public class comment extends Activity {
                 }
                 break;
             case REQUEST_CODE_CAMERA:
-                if (data!=null&&resultCode == RESULT_OK) {
-                    mBitmap = BitmapFactory.decodeFile(mImagePath);
+                if (resultCode == RESULT_OK) {
+//                    mBitmap = BitmapFactory.decodeFile(mImagePath);
+                    try {
+                        mBitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                    mImagePath=imageUri.getPath().toString();
+                    Log.e("", imageUri.getAuthority());
+
+                    Log.e("mImagePath",mImagePath);
+                    @SuppressLint("SdCardPath") String fileName = mImagePath;
+
                 }
                 break;
-            default:
-                System.out.println("错误");
-                return;
         }
 
         // 转换为BitmapDrawable对象
@@ -252,7 +321,7 @@ public class comment extends Activity {
         // 显示位图
         comment_pic.setWillNotDraw(false);
         comment_pic.setImageDrawable(bmpDraw);
-//        //转换成可用来存储的byte[]类型
+        //转换成可用来存储的byte[]类型
         ByteArrayOutputStream stream=new ByteArrayOutputStream();
         mBitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
         pic_byte=stream.toByteArray();
