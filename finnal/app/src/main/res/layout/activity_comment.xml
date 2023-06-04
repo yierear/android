@@ -7,13 +7,22 @@
     tools:context=".comment"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
-    android:layout_marginTop="20dp"
+    android:layout_marginBottom="10dp"
     android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:text="讨论区"
+        android:textColor="@color/Title"
+        android:textSize="30sp" />
 
     <ListView
         android:id="@+id/myListview"
         android:layout_width="match_parent"
-        android:layout_height="600dp" />
+        android:layout_height="580dp" />
 
     <LinearLayout
         android:layout_width="match_parent"

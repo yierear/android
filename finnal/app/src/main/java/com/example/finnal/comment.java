@@ -169,12 +169,12 @@ public class comment extends Activity {
             @Override
             public void onClick(View view) {
                 String imageName = new SimpleDateFormat("yyyyMMddHHmmss", Locale.getDefault()).format(new Date());
-//        File outputImage=new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/data/com.example.woundapplication/"+imageName+".jpg");
+//              File outputImage=new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/data/com.example.woundapplication/"+imageName+".jpg");
 
                 File outputImage = new File(getExternalCacheDir(), imageName+".jpg");
 
                 Objects.requireNonNull(outputImage.getParentFile()).mkdirs();
-//        Log.e("", outputImage.getAbsolutePath());
+//              Log.e("", outputImage.getAbsolutePath());
                 /*
                 创建一个File文件对象，用于存放摄像头拍下的图片，
                 把它存放在应用关联缓存目录下，调用getExternalCacheDir()可以得到这个目录，为什么要
@@ -205,7 +205,7 @@ public class comment extends Activity {
                     imageUri= FileProvider.getUriForFile(comment.this,
                             "com.buildmaterialapplication.fileprovider",outputImage);
                     //对应Mainfest中的provider
-//            imageUri=Uri.fromFile(outputImage);
+//                  imageUri=Uri.fromFile(outputImage);
                     path=imageUri.getPath();
                     Log.e(">7:",path);
                 }
