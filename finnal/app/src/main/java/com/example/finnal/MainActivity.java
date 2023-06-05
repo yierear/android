@@ -21,12 +21,13 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
-    private Button Bhome,Breservation,Bcomment,Bmy,play_music;//首页、预约、讨论、我的 按钮
+    private Button Bhome,Breservation,Bcomment,Bmy,play_music,stop_music;//首页、预约、讨论、我的 按钮
     private ViewHolder holder;
     private com.example.finnal.home home1;
     String name=null;
     private home home;
     final String[] musics={"Back To December","梦中的婚礼","安静","少女的心","剑仙","完美的邂逅"};
+    private Intent intentMusic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +60,8 @@ public class MainActivity extends Activity {
         Breservation= findViewById(R.id.reservation);
         Bcomment= findViewById(R.id.comment);
         Bmy=findViewById(R.id.my);
-        play_music=findViewById(R.id.music);
+        play_music=findViewById(R.id.play_music);
+        stop_music=findViewById(R.id.stop_music);
         Breservation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,7 +103,7 @@ public class MainActivity extends Activity {
                                 switch (which){
                                     case 0:
                                         // 启动服务播放背景音乐
-                                        Intent intentMusic = new Intent(MainActivity.this, MyIntentService.class);
+                                        intentMusic = new Intent(MainActivity.this, MyIntentService.class);
                                         String action_1 = MyIntentService.ACTION_MUSIC_1;
                                         // 设置action
                                         intentMusic.setAction(action_1);
@@ -150,6 +152,14 @@ public class MainActivity extends Activity {
                                 }
                             }
                         }).create().show();
+            }
+        });
+
+        stop_music.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intentMusic.setAction(null);
+                startService(intentMusic);
             }
         });
     }

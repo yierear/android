@@ -59,6 +59,9 @@ public class MyIntentService extends IntentService {
 //            }else if (ACTION_MUSIC_6.equals(action)){
 //                handleActionMusic6();
 //            }
+            else{
+                stop();
+            }
         }
     }
 
@@ -71,6 +74,9 @@ public class MyIntentService extends IntentService {
         mediaPlayer = MediaPlayer.create(this, R.raw.back_to_december);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
+    }
+    private void stop() {
+        mediaPlayer.pause();
     }
 //    private void handleActionMusic2() {
 //        if(mediaPlayer != null) mediaPlayer.stop();

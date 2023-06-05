@@ -51,19 +51,35 @@
         </LinearLayout>
 
         <!--中间部分-->
-        <!--底部部分-->
 
-        <Button
-            android:id="@+id/music"
+        <!--音乐-->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:background="@color/SmallGreen"
-            android:text="播放" />
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/play_music"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:background="@color/SmallGreen"
+                android:text="开始播放" />
+            <Button
+                android:id="@+id/stop_music"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:background="@color/SmallGreen"
+                android:text="暂停播放" />
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="409dp"
+            android:layout_height="460dp"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
             <!--列表-->
@@ -71,12 +87,12 @@
             <ListView
                 android:id="@+id/homelist"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="438dp"
                 android:layout_margin="10dp"
                 android:divider="#00000000"
                 android:dividerHeight="30dp"></ListView>
         </LinearLayout>
-
+        <!--底部部分-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
