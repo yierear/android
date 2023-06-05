@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
     private com.example.finnal.home home1;
     String name=null;
     private home home;
-    final String[] musics={"Back To December","梦中的婚礼","安静","少女的心","剑仙","完美的邂逅"};
+    final String[] musics={"Back To December","二向箔降维打击","图书馆阅读","适合安静读书","图书馆","我们的时光"};
     private Intent intentMusic;
 
     @Override
@@ -109,46 +109,46 @@ public class MainActivity extends Activity {
                                         intentMusic.setAction(action_1);
                                         startService(intentMusic);
                                         break;
-//                                    case 1:
-//                                        // 启动服务播放背景音乐
-//                                        intentMusic = new Intent(EditActivity.this, MyIntentService.class);
-//                                        String action_2 = MyIntentService.ACTION_MUSIC_2;
-//                                        // 设置action
-//                                        intentMusic.setAction(action_2);
-//                                        startService(intentMusic);
-//                                        break;
-//                                    case 2:
-//                                        // 启动服务播放背景音乐
-//                                        intentMusic = new Intent(EditActivity.this, MyIntentService.class);
-//                                        String action_3 = MyIntentService.ACTION_MUSIC_3;
-//                                        // 设置action
-//                                        intentMusic.setAction(action_3);
-//                                        startService(intentMusic);
-//                                        break;
-//                                    case 3:
-//                                        // 启动服务播放背景音乐
-//                                        intentMusic = new Intent(EditActivity.this, MyIntentService.class);
-//                                        String action_4 = MyIntentService.ACTION_MUSIC_4;
-//                                        // 设置action
-//                                        intentMusic.setAction(action_4);
-//                                        startService(intentMusic);
-//                                        break;
-//                                    case 4:
-//                                        // 启动服务播放背景音乐
-//                                        intentMusic = new Intent(EditActivity.this, MyIntentService.class);
-//                                        String action_5 = MyIntentService.ACTION_MUSIC_5;
-//                                        // 设置action
-//                                        intentMusic.setAction(action_5);
-//                                        startService(intentMusic);
-//                                        break;
-//                                    case 5:
-//                                        // 启动服务播放背景音乐
-//                                        intentMusic = new Intent(EditActivity.this, MyIntentService.class);
-//                                        String action_6 = MyIntentService.ACTION_MUSIC_6;
-//                                        // 设置action
-//                                        intentMusic.setAction(action_6);
-//                                        startService(intentMusic);
-//                                        break;
+                                    case 1:
+                                        // 启动服务播放背景音乐
+                                        intentMusic = new Intent(MainActivity.this, MyIntentService.class);
+                                        String action_2 = MyIntentService.ACTION_MUSIC_2;
+                                        // 设置action
+                                        intentMusic.setAction(action_2);
+                                        startService(intentMusic);
+                                        break;
+                                    case 2:
+                                        // 启动服务播放背景音乐
+                                        intentMusic = new Intent(MainActivity.this, MyIntentService.class);
+                                        String action_3 = MyIntentService.ACTION_MUSIC_3;
+                                        // 设置action
+                                        intentMusic.setAction(action_3);
+                                        startService(intentMusic);
+                                        break;
+                                    case 3:
+                                        // 启动服务播放背景音乐
+                                        intentMusic = new Intent(MainActivity.this, MyIntentService.class);
+                                        String action_4 = MyIntentService.ACTION_MUSIC_4;
+                                        // 设置action
+                                        intentMusic.setAction(action_4);
+                                        startService(intentMusic);
+                                        break;
+                                    case 4:
+                                        // 启动服务播放背景音乐
+                                        intentMusic = new Intent(MainActivity.this, MyIntentService.class);
+                                        String action_5 = MyIntentService.ACTION_MUSIC_5;
+                                        // 设置action
+                                        intentMusic.setAction(action_5);
+                                        startService(intentMusic);
+                                        break;
+                                    case 5:
+                                        // 启动服务播放背景音乐
+                                        intentMusic = new Intent(MainActivity.this, MyIntentService.class);
+                                        String action_6 = MyIntentService.ACTION_MUSIC_6;
+                                        // 设置action
+                                        intentMusic.setAction(action_6);
+                                        startService(intentMusic);
+                                        break;
                                 }
                             }
                         }).create().show();
