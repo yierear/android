@@ -47,7 +47,10 @@ public class my extends Activity {
         more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new  AlertDialog.Builder(my.this).setMessage("更多功能，尽情期待").show();
+                Intent intent2 = new Intent(my.this,schedule.class);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                my.this.startActivity(intent2);
             }
         });
     }

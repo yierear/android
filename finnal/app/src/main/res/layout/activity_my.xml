@@ -74,7 +74,8 @@
             android:layout_marginBottom="10dp"
             android:background="@color/SmallGreen"
             android:text="退出账号"
-            android:textSize="20dp"></Button>
+            android:textSize="20dp">
+        </Button>
 
         <Button android:id="@+id/more"
             android:layout_width="wrap_content"

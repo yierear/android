@@ -1,6 +1,8 @@
 package com.example.finnal;
 
 import android.app.Activity;
+import android.content.ContentUris;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
+
+import java.util.List;
 
 public class MainActivity extends Activity {
 
@@ -25,6 +29,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         ViewFlipper flipper = findViewById(R.id.flipper);
         flipper.startFlipping();
         ListView mLvHome=findViewById(R.id.homelist);//首页场地列表

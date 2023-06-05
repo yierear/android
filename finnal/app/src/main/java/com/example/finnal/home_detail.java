@@ -12,6 +12,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import kotlin.jvm.internal.markers.KMutableList;
+
 //推荐页
 public class home_detail extends Activity {
     private home_detail.ViewHolder holder;
@@ -24,6 +26,12 @@ public class home_detail extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homedetail);
         ListView mLvHome=findViewById(R.id.homelist);
+        KMutableList myhome = new KMutableList() {
+            @Override
+            public int hashCode() {
+                return super.hashCode();
+            }
+        };
 
         home1 =new home();
         home_detail.Newadptor newadptor =new home_detail.Newadptor();
