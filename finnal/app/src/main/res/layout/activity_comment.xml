@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".comment"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginBottom="15dp"
     android:orientation="vertical">
 
     <TextView
@@ -32,23 +32,26 @@
 
         <EditText
             android:id="@+id/write_comment"
-            android:layout_width="246dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="3"
             android:gravity="center" />
 
         <Button
             android:id="@+id/send_picture"
-            android:layout_width="55dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:layout_weight="0.5"
             android:background="@color/SmallGreen"
             android:text="图片" />
 
         <Button
             android:id="@+id/insert"
-            android:layout_width="55dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:layout_weight="0.5"
             android:background="@color/SmallGreen"
             android:text="发表" />
 

@@ -257,6 +257,7 @@ public class comment extends Activity {
         mContentValues.put("comment", text.getText().toString().trim());
         mContentValues.put("picture",pic_byte);
         mDbWriter.insert("comment", null, mContentValues);
+        pic_byte=null;
         refreshListview();
     }
     public void deleteData(int position) {
