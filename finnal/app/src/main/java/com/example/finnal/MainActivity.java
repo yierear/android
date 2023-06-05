@@ -1,8 +1,10 @@
 package com.example.finnal;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ContentUris;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,11 +21,12 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
-    private Button Bhome,Breservation,Bcomment,Bmy;//首页、预约、讨论、我的 按钮
+    private Button Bhome,Breservation,Bcomment,Bmy,play_music;//首页、预约、讨论、我的 按钮
     private ViewHolder holder;
     private com.example.finnal.home home1;
     String name=null;
     private home home;
+    final String[] musics={"Back To December","梦中的婚礼","安静","少女的心","剑仙","完美的邂逅"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +59,7 @@ public class MainActivity extends Activity {
         Breservation= findViewById(R.id.reservation);
         Bcomment= findViewById(R.id.comment);
         Bmy=findViewById(R.id.my);
+        play_music=findViewById(R.id.music);
         Breservation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,6 +86,70 @@ public class MainActivity extends Activity {
                 Intent intent3=new Intent(MainActivity.this, my.class);
                 intent3.putExtra("username", name);
                 startActivity(intent3);
+            }
+        });
+
+        play_music.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("选择一个背景音乐")
+//                        .setIcon(R.drawable.music_collection)
+                        .setItems(musics, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                switch (which){
+                                    case 0:
+                                        // 启动服务播放背景音乐
+                                        Intent intentMusic = new Intent(MainActivity.this, MyIntentService.class);
+                                        String action_1 = MyIntentService.ACTION_MUSIC_1;
+                                        // 设置action
+                                        intentMusic.setAction(action_1);
+                                        startService(intentMusic);
+                                        break;
+//                                    case 1:
+//                                        // 启动服务播放背景音乐
+//                                        intentMusic = new Intent(EditActivity.this, MyIntentService.class);
+//                                        String action_2 = MyIntentService.ACTION_MUSIC_2;
+//                                        // 设置action
+//                                        intentMusic.setAction(action_2);
+//                                        startService(intentMusic);
+//                                        break;
+//                                    case 2:
+//                                        // 启动服务播放背景音乐
+//                                        intentMusic = new Intent(EditActivity.this, MyIntentService.class);
+//                                        String action_3 = MyIntentService.ACTION_MUSIC_3;
+//                                        // 设置action
+//                                        intentMusic.setAction(action_3);
+//                                        startService(intentMusic);
+//                                        break;
+//                                    case 3:
+//                                        // 启动服务播放背景音乐
+//                                        intentMusic = new Intent(EditActivity.this, MyIntentService.class);
+//                                        String action_4 = MyIntentService.ACTION_MUSIC_4;
+//                                        // 设置action
+//                                        intentMusic.setAction(action_4);
+//                                        startService(intentMusic);
+//                                        break;
+//                                    case 4:
+//                                        // 启动服务播放背景音乐
+//                                        intentMusic = new Intent(EditActivity.this, MyIntentService.class);
+//                                        String action_5 = MyIntentService.ACTION_MUSIC_5;
+//                                        // 设置action
+//                                        intentMusic.setAction(action_5);
+//                                        startService(intentMusic);
+//                                        break;
+//                                    case 5:
+//                                        // 启动服务播放背景音乐
+//                                        intentMusic = new Intent(EditActivity.this, MyIntentService.class);
+//                                        String action_6 = MyIntentService.ACTION_MUSIC_6;
+//                                        // 设置action
+//                                        intentMusic.setAction(action_6);
+//                                        startService(intentMusic);
+//                                        break;
+                                }
+                            }
+                        }).create().show();
             }
         });
     }
