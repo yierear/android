@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class my extends Activity {
     Button login;
@@ -47,10 +48,7 @@ public class my extends Activity {
         more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(my.this,schedule.class);
-                intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                my.this.startActivity(intent2);
+                Toast.makeText(my.this,"敬请期待!",Toast.LENGTH_SHORT).show();
             }
         });
     }

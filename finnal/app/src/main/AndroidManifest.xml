@@ -65,10 +65,6 @@
             android:name=".home_detail"
             android:exported="false" />
 
-        <activity
-            android:name=".schedule"
-            android:exported="false" />
-
         <receiver
             android:name=".AlarmReceiver"
             android:process=":remote" />
@@ -82,11 +78,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths"/>
         </provider>
-
-        <provider
-            android:name=".AppointmentContentProvider"
-            android:authorities="com.example.finnal.appointments"
-            android:exported="true" />
 
     </application>
 
