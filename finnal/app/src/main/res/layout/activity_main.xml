@@ -10,24 +10,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:orientation="vertical">
         <!--顶部固定-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="190dp">
+            android:layout_height="295dp">
             <!--轮播图-->
 
             <ViewFlipper
                 android:id="@+id/flipper"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_height="match_parent">
 
                 <ImageView
                     android:id="@+id/imageView1"
-                    android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:src="@drawable/lib1" />
 
                 <ImageView
@@ -55,23 +54,24 @@
         <!--音乐-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_height="39dp"
             android:orientation="horizontal">
+
             <Button
                 android:id="@+id/play_music"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_margin="5dp"
+                android:layout_weight="1"
                 android:background="@color/SmallGreen"
-                android:text="开始播放" />
+                android:text="选择背景音乐" />
+
             <Button
                 android:id="@+id/stop_music"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_margin="5dp"
+                android:layout_weight="1"
                 android:background="@color/SmallGreen"
                 android:text="暂停播放" />
         </LinearLayout>
@@ -79,7 +79,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="460dp"
+            android:layout_height="367dp"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
             <!--列表-->
@@ -88,7 +88,6 @@
                 android:id="@+id/homelist"
                 android:layout_width="match_parent"
                 android:layout_height="438dp"
-                android:layout_margin="10dp"
                 android:divider="#00000000"
                 android:dividerHeight="30dp"></ListView>
         </LinearLayout>
