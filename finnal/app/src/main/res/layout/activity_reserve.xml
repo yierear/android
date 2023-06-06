@@ -22,8 +22,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="25dp"
+                android:textSize="30dp"
                 android:id="@+id/reserveText1"
+                android:fontFamily="@font/sjt"
+                android:textStyle="bold"
                 android:layout_marginLeft="33dp"
                 android:layout_marginTop="10dp"/>
             <Button
@@ -52,7 +54,9 @@
             <TextView android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/reserveText2"
-                android:textSize="25dp"
+                android:textSize="30dp"
+                android:fontFamily="@font/sjt"
+                android:textStyle="bold"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"/>
             <Button android:id="@+id/reserveBtn2"
@@ -80,7 +84,9 @@
             <TextView android:id="@+id/reserveText3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="25dp"
+                android:textSize="30dp"
+                android:fontFamily="@font/sjt"
+                android:textStyle="bold"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"/>
             <Button android:id="@+id/reserveBtn3"
@@ -109,7 +115,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/reserveText4"
-                android:textSize="25dp"
+                android:textSize="30dp"
+                android:fontFamily="@font/sjt"
+                android:textStyle="bold"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"/>
             <Button
@@ -139,7 +147,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/reserveText5"
-                android:textSize="25dp"
+                android:textSize="30dp"
+                android:fontFamily="@font/sjt"
+                android:textStyle="bold"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"/>
             <Button
@@ -169,7 +179,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/reserveText6"
-                android:textSize="25dp"
+                android:textSize="30dp"
+                android:fontFamily="@font/sjt"
+                android:textStyle="bold"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"/>
             <Button
@@ -199,7 +211,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/reserveText7"
-                android:textSize="25dp"
+                android:textSize="30dp"
+                android:fontFamily="@font/sjt"
+                android:textStyle="bold"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"/>
             <Button

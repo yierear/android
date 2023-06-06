@@ -10,5 +10,6 @@
     <color name="BigGreen">#61764B</color>
     <color name="SmallWhite">#E6FFF4E3</color>
     <color name="SmallGreen">#9BA17B</color>
-    <color name="Title">#00868B</color>
+    <color name="Title"> #5F9F9F</color>
+    <color name="syellow">#FAF9DE</color>
 </resources>

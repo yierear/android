@@ -13,8 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:paddingTop="40dp"
+        android:paddingTop="50dp"
         android:textColor="@color/Title"
+        android:fontFamily="@font/sjt"
+        android:textStyle="bold"
         android:text="注册"
         android:textSize="50dp" />
 
@@ -22,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="170dp">
+        android:paddingTop="100dp">
 
         <TextView
             android:layout_width="wrap_content"

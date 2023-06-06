@@ -9,16 +9,18 @@
 
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="91dp"
+        android:fontFamily="@font/jt"
         android:gravity="center"
+        android:paddingTop="15dp"
         android:text="空间类型预约"
         android:textColor="@color/Title"
-        android:textSize="30sp"
-        android:paddingTop="5dp"/>
+        android:textSize="40dp"
+        android:textStyle="bold" />
 
     <ListView
         android:divider="#00000000"
-        android:dividerHeight="30dp"
+        android:dividerHeight="40dp"
         android:id="@+id/reservation"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"/>

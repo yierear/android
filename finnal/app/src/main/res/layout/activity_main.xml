@@ -102,7 +102,7 @@
                 android:layout_width="101dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#FFFFFF"
+                android:background="@color/SmallGreen"
                 android:drawableTop="@drawable/home"
                 android:text="首页" />
 
@@ -111,7 +111,7 @@
                 android:layout_width="101dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#FFFFFF"
+                android:background="@color/SmallGreen"
                 android:drawableTop="@drawable/reservation"
                 android:text="预约" />
 
@@ -120,7 +120,7 @@
                 android:layout_width="101dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#FFFFFF"
+                android:background="@color/SmallGreen"
                 android:drawableTop="@drawable/comment"
                 android:text="讨论" />
 
@@ -129,7 +129,7 @@
                 android:layout_width="101dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#FFFFFF"
+                android:background="@color/SmallGreen"
                 android:drawableTop="@drawable/my"
                 android:text="我的" />
 

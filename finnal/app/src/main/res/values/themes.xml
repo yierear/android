@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.Finnal" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
-        <item name="android:windowBackground">#F4F4F4</item>
+        <item name="android:windowBackground">@color/syellow</item>
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/BigGreen</item>
         <item name="colorPrimaryVariant">@color/BigGreen</item>

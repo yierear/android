@@ -8,6 +8,7 @@
     android:layout_marginLeft="15dp"
     android:layout_marginRight="15dp"
     android:layout_marginBottom="15dp"
+    android:background="@drawable/bg"
     android:orientation="vertical">
 
     <TextView
@@ -16,8 +17,10 @@
         android:layout_gravity="center_horizontal"
         android:layout_margin="10dp"
         android:text="讨论区"
+        android:fontFamily="@font/jt"
+        android:textStyle="bold"
         android:textColor="@color/Title"
-        android:textSize="30sp" />
+        android:textSize="50dp" />
 
     <ListView
         android:id="@+id/myListview"
