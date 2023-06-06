@@ -16,25 +16,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.082" />
     <!--标题-->
+    <!--内容详细-->
     <TextView
         android:id="@+id/home_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/sjt"
         android:text="TextView"
         android:textColor="@color/Title"
-        android:fontFamily="@font/sjt"
+        android:textSize="25dp"
         android:textStyle="bold"
-        android:textSize="35dp"
         app:layout_constraintBottom_toBottomOf="@+id/home_img"
         app:layout_constraintStart_toEndOf="@+id/home_img"
         app:layout_constraintTop_toTopOf="@+id/home_img"
         app:layout_constraintVertical_bias="0.0" />
-    <!--内容详细-->
+
     <TextView
         android:id="@+id/recommendation_text"
         android:layout_width="180dp"
         android:layout_height="80dp"
+        android:layout_marginStart="20dp"
         android:ellipsize="end"
         android:maxLines="6"
         android:text="TextView"

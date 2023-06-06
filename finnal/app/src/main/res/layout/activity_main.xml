@@ -10,12 +10,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
         android:orientation="vertical">
         <!--顶部固定-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="295dp">
+            android:layout_height="236dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
             <!--轮播图-->
 
             <ViewFlipper
@@ -69,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@color/SmallGreen"
+                android:background="@drawable/round_button"
                 android:text="选择背景音乐" />
 
             <Button
@@ -78,14 +81,14 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@color/SmallGreen"
+                android:background="@drawable/round_button"
                 android:text="暂停播放" />
         </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="339dp"
+            android:layout_height="410dp"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
             <!--列表-->
@@ -100,7 +103,7 @@
         <!--底部部分-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="55dp"
             android:layout_marginTop="10dp">
 
             <Button
@@ -110,6 +113,7 @@
                 android:layout_weight="1"
                 android:background="@color/SmallGreen"
                 android:drawableTop="@drawable/home"
+                android:paddingTop="5dp"
                 android:text="首页" />
 
             <Button
@@ -119,6 +123,7 @@
                 android:layout_weight="1"
                 android:background="@color/SmallGreen"
                 android:drawableTop="@drawable/reservation"
+                android:paddingTop="5dp"
                 android:text="预约" />
 
             <Button
@@ -128,6 +133,7 @@
                 android:layout_weight="1"
                 android:background="@color/SmallGreen"
                 android:drawableTop="@drawable/comment"
+                android:paddingTop="5dp"
                 android:text="讨论" />
 
             <Button
@@ -137,6 +143,7 @@
                 android:layout_weight="1"
                 android:background="@color/SmallGreen"
                 android:drawableTop="@drawable/my"
+                android:paddingTop="5dp"
                 android:text="我的" />
 
 

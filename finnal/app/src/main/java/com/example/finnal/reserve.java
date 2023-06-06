@@ -25,8 +25,8 @@ import java.util.Date;
 import java.util.Locale;
 
 public class reserve extends Activity {
-    private Button button1,button2,button3,button4,button5,button6,button7,backbutton;
-    TextView text1,text2,text3,text4,text5,text6,text7;
+    private Button button1,button2,button4,button5,button6,backbutton;
+    TextView text1,text2,text4,text5,text6;
     private int year;
     private int month;
     private int day;
@@ -111,34 +111,7 @@ public class reserve extends Activity {
         });
         myCalendar.setTime(myDate);//为Calendar对象设置时间为当前日期
 
-        year = myCalendar.get(Calendar.YEAR);
-        month = myCalendar.get(Calendar.MONTH);
-        day = myCalendar.get(Calendar.DAY_OF_MONTH);
 
-        text3.setText("未预约");
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DatePickerDialog dpd=new DatePickerDialog(reserve.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int myyear, int monthOfYear, int dayOfMonth) {
-                        text3.setText(myyear+"-"+(monthOfYear+1)+"-"+dayOfMonth);
-                        year=myyear;
-                        month=monthOfYear;
-                        day=dayOfMonth;
-                        String s="3";
-                        ContentValues mContentValues = new ContentValues();
-                        mContentValues.put("userid", name);
-                        mContentValues.put("type",s);
-                        mContentValues.put("data", text3.getText().toString().trim());
-                        mDbWriter.insert("reserve", null, mContentValues);
-                        setClock(view);
-                    }
-                },year,month,day);
-                dpd.show();
-            }
-        });
-        myCalendar.setTime(myDate);
 
         year = myCalendar.get(Calendar.YEAR);
         month = myCalendar.get(Calendar.MONTH);
@@ -213,29 +186,7 @@ public class reserve extends Activity {
                 dpd.show();
             }
         });
-        text7.setText("未预约");
-        button7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DatePickerDialog dpd=new DatePickerDialog(reserve.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int myyear, int monthOfYear, int dayOfMonth) {
-                        text7.setText(myyear+"-"+(monthOfYear+1)+"-"+dayOfMonth);
-                        year=myyear;
-                        month=monthOfYear;
-                        day=dayOfMonth;
-                        String s="7";
-                        ContentValues mContentValues = new ContentValues();
-                        mContentValues.put("userid", name);
-                        mContentValues.put("type",s);
-                        mContentValues.put("data", text7.getText().toString().trim());
-                        mDbWriter.insert("reserve", null, mContentValues);
-                        setClock(view);
-                    }
-                },year,month,day);
-                dpd.show();
-            }
-        });
+
     backbutton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -249,20 +200,16 @@ public class reserve extends Activity {
     private void initView() {
         button1 =  findViewById(R.id.reserveBtn1);
         button2 =  findViewById(R.id.reserveBtn2);
-        button3 =  findViewById(R.id.reserveBtn3);
         button4 = findViewById(R.id.reserveBtn4);
         button5 = findViewById(R.id.reserveBtn5);
         button6 = findViewById(R.id.reserveBtn6);
-        button7 = findViewById(R.id.reserveBtn7);
         backbutton=findViewById(R.id.fanhui);
 
         text1 =findViewById(R.id.reserveText1);
         text2 =findViewById(R.id.reserveText2);
-        text3 =findViewById(R.id.reserveText3);
         text4 =findViewById(R.id.reserveText4);
         text5 =findViewById(R.id.reserveText5);
         text6 =findViewById(R.id.reserveText6);
-        text7 =findViewById(R.id.reserveText7);
     }
 
     public void setClock(View view){

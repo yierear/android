@@ -20,8 +20,9 @@
 
     <ListView
         android:divider="#00000000"
-        android:dividerHeight="40dp"
+        android:dividerHeight="30dp"
         android:id="@+id/reservation"
+        android:layout_marginBottom="10dp"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"/>
 </LinearLayout>
