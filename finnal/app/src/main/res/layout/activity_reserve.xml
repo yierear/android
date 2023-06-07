@@ -28,7 +28,7 @@
                 android:id="@+id/reserveText1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="33dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/sjt"
                 android:textSize="30dp"
@@ -49,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:orientation="horizontal"
-        android:paddingTop="5dp">
+        android:paddingTop="10dp">
 
         <ImageView
             android:layout_width="227dp"
@@ -58,15 +58,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/reserveText2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/sjt"
                 android:textSize="30dp"
                 android:textStyle="bold" />
@@ -86,7 +86,7 @@
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:orientation="horizontal"
-        android:paddingTop="5dp">
+        android:paddingTop="10dp">
 
         <ImageView
             android:layout_width="227dp"
@@ -95,14 +95,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/reserveText4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="35dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/sjt"
                 android:textSize="30dp"
@@ -123,7 +123,7 @@
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:orientation="horizontal"
-        android:paddingTop="5dp">
+        android:paddingTop="10dp">
 
         <ImageView
             android:layout_width="227dp"
@@ -132,14 +132,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/reserveText5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="35dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/sjt"
                 android:textSize="30dp"
@@ -160,7 +160,7 @@
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:orientation="horizontal"
-        android:paddingTop="5dp">
+        android:paddingTop="10dp">
 
         <ImageView
             android:layout_width="227dp"
@@ -169,14 +169,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/reserveText6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="35dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/sjt"
                 android:textSize="30dp"
@@ -194,10 +194,10 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/fanhui"
+        android:id="@+id/back"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="2dp"
         android:background="@drawable/round_button"
         android:text="返回" />

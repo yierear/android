@@ -203,7 +203,7 @@ public class reserve extends Activity {
         button4 = findViewById(R.id.reserveBtn4);
         button5 = findViewById(R.id.reserveBtn5);
         button6 = findViewById(R.id.reserveBtn6);
-        backbutton=findViewById(R.id.fanhui);
+        backbutton=findViewById(R.id.back);
 
         text1 =findViewById(R.id.reserveText1);
         text2 =findViewById(R.id.reserveText2);
